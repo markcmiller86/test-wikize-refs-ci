@@ -22,8 +22,13 @@ jobs:
 
       - name: Run wikize-refs on each file
         run: |
-          set -e
+          exstat=0
           files=$(git diff --name-only ${{ github.event.before }} ${{ github.event.after }})
           for file in $files; do
             utils/wikize-refs.py -u "$file"
+            if [[ $? -ne 0 ]]; then
+                echo "$file needs wiki refs updated"
+                exstat=1
+            fi
           done
+          exit exstat
