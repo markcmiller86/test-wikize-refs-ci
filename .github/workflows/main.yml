@@ -8,7 +8,7 @@ on:
       - '!docs/**'
 
 jobs:
-  wikize-refs-source:
+  wikize-refs-check:
     runs-on: ubuntu-latest
 
     steps:
