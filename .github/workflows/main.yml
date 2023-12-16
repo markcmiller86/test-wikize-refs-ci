@@ -31,4 +31,4 @@ jobs:
                 exstat=1
             fi
           done
-          exit exstat
+          exit $exstat
