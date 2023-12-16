@@ -16,3 +16,5 @@ Guidance Computer (AGC).<sup>[5],[6],[7]</sup>
 [7]: https://youtu.be/YIBhPsyYCiM "YouTube Video of Rope Core Manufacture"
 [9]: https://www.ibiblio.org/apollo/hrst/archive/1713.pdf "MIT Technical Report on Apollo Guidance and Navigation"
 
+
+
