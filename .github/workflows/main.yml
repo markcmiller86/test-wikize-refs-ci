@@ -28,7 +28,7 @@ jobs:
           exstat=0
           files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }})
           for file in $files; do
-            utils/wikize-refs.py -u "$file"
+            utils/wikize_refs.py -u "$file"
             if [[ $? -ne 0 ]]; then
                 echo "$file needs wiki refs updated"
                 exstat=1
