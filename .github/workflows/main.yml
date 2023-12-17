@@ -25,15 +25,16 @@ jobs:
       - name: Run wikize-refs on each file
         run: |
           set -x
+          set +e
           exstat=0
           files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }})
           echo $files
           pwd
           ls
+          gorfo
           for file in $files; do
-            v=$(python3 utils/wikize_refs.py -u "$file")
-            echo "status is $v"
-            if [[ $v -ne 0 ]]; then
+            python3 utils/wikize_refs.py -u "$file"
+            if [[ $? -ne 0 ]]; then
                 echo "$file needs wiki refs updated"
                 exstat=1
             fi
