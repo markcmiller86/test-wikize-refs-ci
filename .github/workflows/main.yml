@@ -30,6 +30,7 @@ jobs:
           echo $files
           pwd
           ls
+          gorfo
           for file in $files; do
             v=$(python3 utils/wikize_refs.py -u "$file")
             echo "status is $v"
