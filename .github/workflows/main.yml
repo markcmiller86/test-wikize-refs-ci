@@ -25,6 +25,7 @@ jobs:
       - name: Run wikize-refs on each file
         run: |
           set -x
+          set +e
           exstat=0
           files=$(git diff --name-only ${{ github.event.pull_request.base.sha }} ${{ github.sha }})
           echo $files
