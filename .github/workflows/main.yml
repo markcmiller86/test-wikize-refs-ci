@@ -31,8 +31,9 @@ jobs:
           pwd
           ls
           for file in $files; do
-            python3 utils/wikize_refs.py -u "$file"
-            if [[ $? -ne 0 ]]; then
+            v=$(python3 utils/wikize_refs.py -u "$file")
+            echo "status is $v"
+            if [[ $v -ne 0 ]]; then
                 echo "$file needs wiki refs updated"
                 exstat=1
             fi
